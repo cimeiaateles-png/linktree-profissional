@@ -1,3 +1,4 @@
+/* Configuração Geral */
 * {
     margin: 0;
     padding: 0;
@@ -6,65 +7,54 @@
 }
 
 body {
-    min-height: 100vh;
+    background-image: url('fundo-margarida.jpg'); /* Certifique-se que o nome da imagem é este */
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-
-    /* ALTERADO: Imagem fundo-margarida e ajustes de nitidez */
-    background-image: url('fundo-margarida.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
+/* Cartão com Efeito de Vidro (Glassmorphism) */
 #cartao-visita {
-    /* ALTERADO: Transparência ajustada para fundo claro (Margarida) */
-    background: rgba(255, 255, 255, 0.25); 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 40px;
     width: 90%;
-    max-width: 380px;
-    padding: 40px 30px;
-    border-radius: 30px;
+    max-width: 400px;
     text-align: center;
-    
-    /* ALTERADO: Borda em branco sólido suave para destacar no verde */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 header img {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    border: 3px solid #f9d71c; /* Dourado da margarida */
+    margin-bottom: 15px;
     object-fit: cover;
-    /* ALTERADO: Aro em Verde Floresta para contrastar com as pétalas */
-    border: 3px solid #1a3c34; 
-    margin-bottom: 20px;
-    box-shadow: 0 0 15px rgba(26, 60, 52, 0.3);
 }
 
-h1 {
-    /* ALTERADO: Cor Verde Floresta escuro para leitura sobre fundo claro */
-    color: #1a3c34;
-    font-size: 24px;
+header h1 {
+    color: #2d5a27; /* Verde escuro das folhas */
+    font-size: 1.5rem;
     margin-bottom: 5px;
 }
 
-p {
-    /* ALTERADO: Dourado extraído do miolo da margarida */
-    color: #b8860b; 
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+header p {
+    color: #f9d71c; /* Dourado */
+    font-weight: bold;
+    font-size: 0.9rem;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
+/* Botões */
 #lista-links {
     display: flex;
     flex-direction: column;
@@ -72,23 +62,18 @@ p {
 }
 
 .botao-link {
-    display: block;
-    /* ALTERADO: Base branca translúcida com texto em verde escuro */
-    background: rgba(255, 255, 255, 0.6);
-    color: #1a3c34;
+    background: rgba(255, 255, 255, 0.8);
+    color: #2d5a27;
     text-decoration: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 15px;
-    border: 1px solid #1a3c34;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
     transition: 0.3s;
+    border: 1px solid #2d5a27;
 }
 
 .botao-link:hover {
-    /* ALTERADO: No hover, o botão assume o verde da folhagem */
-    background: #1a3c34;
+    background: #2d5a27;
     color: #ffffff;
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(26, 60, 52, 0.4);
+    transform: scale(1.02);
 }
