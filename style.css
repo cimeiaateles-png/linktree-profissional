@@ -1,26 +1,89 @@
 
 
-scrip.js
+/* Reset básico para tirar margens indesejadas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-// A lista com os SEUS dados reais
-const meusLinks = [
-    { nome: "LinkedIn", url: "https://www.linkedin.com/in/cim%C3%A9ia-siqueira-teles-566a0b124" },
-    { nome: "GitHub", url: "https://github.com/cimeiaateles-png" },
-    { nome: "WhatsApp / Telefone", url: "https://wa.me/5551993483796" },
-    { nome: "Enviar E-mail", url: "mailto:cimeiaateles@gmail.com" },
-    { nome: "Currículo", url: "curriculo.cimeia.pdf.pdf" }
-];
+body {
+    /* O link abaixo é uma imagem de margaridas. Se você tiver a sua, troque o link entre as aspas */
+    background: url('https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-// O código que "fabrica" os botões na tela
-const listaLinks = document.getElementById("lista-links");
+/* O cartão com efeito de transparência (Glassmorphism) */
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 20px;
+    border-radius: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
 
-meusLinks.forEach(link => {
-    const novoBotao = document.createElement("a");
-    novoBotao.href = link.url;
-    novoBotao.textContent = link.nome;
-    novoBotao.className = "botao-link";
-    novoBotao.target = "_blank";
-    
-    listaLinks.appendChild(novoBotao);
+header {
+    margin-bottom: 30px;
+}
 
-});
+/* Foto de perfil redonda */
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #2d4a22; /* Verde escuro */
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #b8860b; /* Dourado/Mostarda do seu print */
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Espaçamento entre os botões */
+#links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Estilo dos botões */
+.button {
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Efeito ao passar o mouse */
+.button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
