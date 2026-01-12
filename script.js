@@ -1,0 +1,21 @@
+// A lista com os SEUS dados reais
+const meusLinks = [
+    { nome: "LinkedIn", url: "https://www.linkedin.com/in/cim%C3%A9ia-siqueira-teles-566a0b124" },
+    { nome: "GitHub", url: "https://github.com/cimeiaateles-png" },
+    { nome: "WhatsApp / Telefone", url: "https://wa.me/5551993483796" },
+    { nome: "Enviar E-mail", url: "mailto:cimeiaateles@gmail.com" },
+    { nome: "Currículo", url: "curriculo.cimeia.pdf.pdf" }
+];
+
+// O código que "fabrica" os botões na tela
+const listaLinks = document.getElementById("lista-links");
+
+meusLinks.forEach(link => {
+    const novoBotao = document.createElement("a");
+    novoBotao.href = link.url;
+    novoBotao.textContent = link.nome;
+    novoBotao.className = "botao-link";
+    novoBotao.target = "_blank";
+    
+    listaLinks.appendChild(novoBotao);
+});
